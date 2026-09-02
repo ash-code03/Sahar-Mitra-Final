@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@theme {
+  --color-navy: #0A0F16;
+  --color-navyDeep: #05090D;
+  --color-ocean: #103652;
+  --color-teal: #1B8F94;
+  --color-tealBright: #22A6A0;
+  --color-aqua: #8FE3D6;
+  --color-ice: #E0F2F1;
+  --color-amber: #E8A33D;
+  --color-danger: #E4572E;
+  --color-dangerDeep: #B33A1E;
+  --color-line: rgba(255, 255, 255, 0.1);
+  --color-slateLight: #9AB0BE;
+
+  --font-inter: 'Inter', sans-serif;
+  --font-tamil: 'Noto Sans Tamil', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply m-0 p-0;
+  }
+  * {
+    @apply box-border;
+  }
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}
+
+@layer utilities {
+  .animate-sm-pulse {
+    animation: smPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  .animate-radar-sweep {
+    animation: radarSweep 4s linear infinite;
+  }
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}
+
+@keyframes smPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .4; transform: scale(1.1); }
+}
+
+@keyframes radarSweep {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
